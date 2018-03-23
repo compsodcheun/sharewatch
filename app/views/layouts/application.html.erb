@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Share Watch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render "shared/navbar" %>
+    <div class="container">
+      <br>
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
