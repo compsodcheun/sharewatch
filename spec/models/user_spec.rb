@@ -15,7 +15,12 @@ RSpec.describe User, type: :model do
   end
 
   describe "Association Matchers" do
-    it { is_expected.to have_many :watchs }
-    it { is_expected.to have_many :transactions }
+    it { is_expected.to have_many :watches }
+    it { is_expected.to have_many :borrowing }
+    it { is_expected.to have_many :lending }
+  end
+
+  describe "Validation Matchers" do
+    it { is_expected.to validate_presence_of(:name) }
   end
 end

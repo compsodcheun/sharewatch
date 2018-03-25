@@ -1,68 +1,16 @@
 <div class="row">
-  <div class="col-4">
+  <!-- <div class="col-4">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Filter</h5>
-        <p class="card-text">Filter</p>
+        <p class="card-text"><%= current_user.as_json %></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="col-8">
-    <div class="row">
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="card mb-4">
-          <img class="card-img-top" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
-          <div class="card-body">
-            <p class="card-text">Some quick</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% @watches.each_with_index do |watch, i| %>
+    <%= render 'shared/watch_card', watch: watch, i: i %>
+  <% end %>
 </div>
+
+<%= will_paginate @watches, renderer: custom_will_paginate %><br/>

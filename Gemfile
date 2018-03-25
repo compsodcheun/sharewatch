@@ -32,6 +32,9 @@ gem 'devise'
 gem 'bootstrap', '4.0.0'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.0.6'
+gem 'rails-controller-testing'
+gem 'will_paginate', '~> 3.1.0'
+gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +52,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
@@ -57,6 +61,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
   gem 'mongoid-rspec', git: 'https://github.com/mongoid-rspec/mongoid-rspec.git'
   gem 'email_spec', '~> 2.1'
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

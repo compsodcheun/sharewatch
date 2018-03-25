@@ -1,0 +1,16 @@
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="btn-group">
+      <%= link_to new_watch_path, class: "btn btn-info" do %>
+        <i class="fas fa-plus-square"></i> Create new one
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% @watches.each_with_index do |watch, i| %>
+    <%= render 'shared/watch_card', watch: watch, i: i %>
+  <% end %>
+</div>
+<%= will_paginate @watches, renderer: custom_will_paginate %><br/>

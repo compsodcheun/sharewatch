@@ -1,0 +1,36 @@
+<ul class="list-unstyled">
+  <% @transactions.each_with_index do |t| %>
+    <li class="media my-4">
+      <img class="mr-3" src="<%= get_image_path(t.watch.images.first, t.watch, true) %>">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1 mx-2">
+          <%= "#{t.watch.name} #{t.created_at.strftime('%H:%M %d/%b/%Y')}" %>
+          <span class="badge badge-<%= Transaction.color[t.state] %>">
+            <%= t.state.capitalize %>
+          </span>
+        </h5>
+        <br>
+        <div class="action">
+          <%= link_to borrow_path(t),
+            method: 'delete',
+            data: {confirm: 'Are you sure?'},
+            class: "btn btn-outline-danger" do
+          %>
+            cancel
+          <% end if t.state.eql? Transaction::PENDING %>
+        </div>
+        <div class="action">
+          <%= link_to borrow_path(t),
+            method: 'delete',
+            data: {confirm: 'Are you sure?'},
+            class: "btn btn-outline-primary" do
+          %>
+            Returns
+          <% end if t.state.eql? Transaction::APPROVE %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @transactions, renderer: custom_will_paginate %><br/>

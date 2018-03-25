@@ -1,0 +1,9 @@
+<div class="button-group float-right">
+  <%= link_to borrowing_watch_path(watch),
+    method: 'post',
+    data: {confirm: 'Are you sure?'},
+    class: "btn btn-primary btn-sm" do
+  %>
+    borrowing
+  <% end %>
+</div>

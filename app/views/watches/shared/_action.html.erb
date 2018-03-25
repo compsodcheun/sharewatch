@@ -1,0 +1,13 @@
+<div class="button-group float-right">
+  <%= link_to edit_watch_path(watch), class: "btn btn-warning btn-sm" do %>
+  <i class="fas fa-pencil-alt"></i>
+  <% end %>
+  
+  <%= link_to watch_path(watch),
+    method: 'delete',
+    data: {confirm: 'Are you sure?'},
+    class: "btn btn-dark btn-sm" do
+  %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+</div>
